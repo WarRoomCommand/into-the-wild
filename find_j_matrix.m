@@ -2,7 +2,7 @@ global corr
 global data
 
 % load data
-file_path = "";%"../scotus/";
+file_path = "../scotus/";
 corr = csvread(file_path + "scotus_correlation.csv");
 data = transpose(csvread(file_path + "all_scotus_states.csv"));
 [num_actors, ~] = size(corr);
