@@ -41,11 +41,12 @@ for i in range(9):
 N = 9
 C = voting_data.corr()
 
+
 ceig = scipy.linalg.eig(C)
 cvals, cvecs = ceig
 cvals = np.real(cvals)
-S, Sinv = cvecs, scipy.linalg.inv(cvecs)
-
+V = cvecs
+Vinv = np.transpose(cvecs)
 
 
 J_diag_factor = np.array([[(((pbin[i][j] - pvec[i]*pvec[j]) * (pvec[i] - 0.5))/(pvec[i] * (1-pvec[i])))\
