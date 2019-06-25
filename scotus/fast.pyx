@@ -116,4 +116,4 @@ def my_test_sample(float gamma, start_state, J, int num_samples = 100):
 
 
 def ising_log_likelihood(state, J):
-    return(-state@J@state)
+    return(-0.5 * state@J@state)
