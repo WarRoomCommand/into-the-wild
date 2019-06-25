@@ -47,7 +47,7 @@ def cfast_sample(float gamma, start_state, J, int num_samples = 100):
     
         # The below line is ONLY valid if J[k][k] = 0! Importantly, this is not what the cited paper 
         # does, but we know that we should be able to throw out quadratic terms. 
-        dE = 4 * new_state[k] * (J[k] @ new_state)
+        dE = 2 * new_state[k] * (J[k] @ new_state)
         rel_prob = exp(-dE)
         accept = (rel_prob > np.random.rand())
         if accept:
@@ -85,7 +85,7 @@ def my_test_sample(float gamma, start_state, J, int num_samples = 100):
     
         # The below line is ONLY valid if J[k][k] = 0! Importantly, this is not what the cited paper 
         # does, but we know that we should be able to throw out quadratic terms. 
-        dE = 4 * new_state[k] * (J[k] @ new_state)
+        dE = 2 * new_state[k] * (J[k] @ new_state)
         rel_prob = exp(-dE)
         accept = (rel_prob > float(rand()) / RAND_MAX)
         if accept:
@@ -100,7 +100,7 @@ def my_test_sample(float gamma, start_state, J, int num_samples = 100):
         
         # The below line is ONLY valid if J[k][k] = 0! Importantly, this is not what the cited paper 
         # does, but we know that we should be able to throw out quadratic terms. 
-        dE = 4 * new_state[k] * (J[k] @ new_state)
+        dE = 2 * new_state[k] * (J[k] @ new_state)
         rel_prob = exp(-dE / T)
         accept = (rel_prob > np.random.rand())
         num_attempts += 1
