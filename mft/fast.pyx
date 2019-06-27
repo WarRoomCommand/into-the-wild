@@ -47,8 +47,13 @@ def cfast_sample(float gamma, start_state, J, int num_samples = 100):
     
         # The below line is ONLY valid if J[k][k] = 0! Importantly, this is not what the cited paper 
         # does, but we know that we should be able to throw out quadratic terms. 
+<<<<<<< HEAD:mft/fast.pyx
         dE = 2 * state_list[-1][k] * (J[k] @ state_list[-1])
         rel_prob = exp(-dE * 0.2)
+=======
+        dE = 2 * new_state[k] * (J[k] @ new_state)
+        rel_prob = exp(-dE)
+>>>>>>> 0719b75eeeddf0c32c4963e3424162966e6dfc88:scotus/fast.pyx
         accept = (rel_prob > np.random.rand())
 
         if accept:
