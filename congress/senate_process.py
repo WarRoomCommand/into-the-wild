@@ -34,8 +34,8 @@ corr = output_data.corr()
 
 output_data_t = output_data.transpose()
 
-corr.to_csv("correlations.csv", header=False, index=False)
-output_data_t.to_csv("processed_data.csv", header=False, index=False)
+#corr.to_csv("correlations.csv", header=False, index=False)
+#output_data_t.to_csv("processed_data.csv", header=False, index=False)
 
 sns.heatmap(corr, cmap="coolwarm", vmin=-1.0, vmax=1.0)
 plt.show()
